@@ -121,7 +121,7 @@ class BaseConnection(object):
         context: Optional[Dict[Any, Any]] = None,
         **kwargs: Any,
     ):
-        netloc = f"{host}:{port}"
+        netloc = f"[{host}]:{port}"
         path = path or "/"
         self.url = parse.urlunparse((scheme, netloc, path, None, None, None))
         self.context = context or {}
